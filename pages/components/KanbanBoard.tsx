@@ -36,67 +36,118 @@ const defaultTasks: Task[] = [
     id: "1",
     columnId: "todo",
     content: "List admin APIs for dashboard",
+       completionDate: ""
+
+,
   },
   {
     id: "2",
     columnId: "todo",
     content:
-      "Develop user registration functionality with OTP delivered on SMS after email confirmation and phone number confirmation",
+      "Develop user registration functionality",
+         completionDate: ""
+
+,
+
   },
   {
     id: "3",
     columnId: "doing",
     content: "Conduct security testing",
+       completionDate: ""
+
+,
+
   },
   {
     id: "4",
     columnId: "doing",
     content: "Analyze competitors",
+       completionDate: ""
+
+,
+
   },
   {
     id: "5",
     columnId: "done",
     content: "Create UI kit documentation",
+       completionDate: ""
+
+,
+
   },
   {
     id: "6",
     columnId: "done",
     content: "Dev meeting",
+       completionDate: ""
+
+,
+
   },
   {
     id: "7",
     columnId: "done",
     content: "Deliver dashboard prototype",
+       completionDate: ""
+
+,
+
   },
   {
     id: "8",
     columnId: "todo",
     content: "Optimize application performance",
+       completionDate: ""
+
+,
+
   },
   {
     id: "9",
     columnId: "todo",
     content: "Implement data validation",
+       completionDate: ""
+
+,
+
   },
   {
     id: "10",
     columnId: "todo",
     content: "Design database schema",
+       completionDate: ""
+
+,
+
   },
   {
     id: "11",
     columnId: "todo",
     content: "Integrate SSL web certificates into workflow",
+       completionDate: ""
+
+,
+
   },
   {
     id: "12",
     columnId: "doing",
     content: "Implement error logging and monitoring",
+       completionDate: ""
+
+,
+
   },
   {
     id: "13",
     columnId: "doing",
     content: "Design and implement responsive UI",
+       completionDate: ""
+
+,
+
   },
 ];
 
@@ -213,6 +264,8 @@ function KanbanBoard() {
       id: generateId(),
       columnId,
       content: `Task ${tasks.length + 1}`,
+      completionDate: ""
+
     };
 
     setTasks([...tasks, newTask]);
