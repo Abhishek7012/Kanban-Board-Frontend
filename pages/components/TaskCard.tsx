@@ -19,7 +19,9 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
   const [completionDate, setCompletionDate] = useState<Date | null>(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
   // console.log("setCompletionDate", setCompletionDate);
-
+  if (!task || !task.id) {
+    return null; // or handle the error in an appropriate way
+  }
   const {
     setNodeRef,
     attributes,

@@ -28,9 +28,18 @@ function ColumnContainer({
 }: Props) {
   const [editMode, setEditMode] = useState(false);
 
+  // const tasksIds = useMemo(() => {
+  //   return tasks.map((task) => task.id);
+  // }, [tasks]);
+  // console.log("tasksIds",tasksIds);
   const tasksIds = useMemo(() => {
-    return tasks.map((task) => task.id);
+    if (tasks && tasks.length > 0) {
+      return tasks.map((task) => task.id);
+    } else {
+      return [];
+    }
   }, [tasks]);
+  
 
   const {
     setNodeRef,
@@ -161,7 +170,7 @@ function ColumnContainer({
       {/* Column task container */}
       <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto">
         <SortableContext items={tasksIds}>
-          {tasks.map((task) => (
+          { tasks && tasks.map((task) => (
             <TaskCard
               key={task.id}
               task={task}

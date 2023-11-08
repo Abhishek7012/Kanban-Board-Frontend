@@ -191,7 +191,7 @@ function KanbanBoard() {
         <div className="m-auto flex gap-4">
           <div className="flex gap-4">
             <SortableContext items={columnsId}>
-              {columns.map((col) => (
+              {/* {columns.map((col) => (
                 <ColumnContainer
                   key={col.id}
                   column={col}
@@ -202,7 +202,24 @@ function KanbanBoard() {
                   updateTask={updateTask}
                   tasks={tasks.filter((task) => task.columnId === col.id)}
                 />
-              ))}
+              ))} */}
+              {columns.map((col) => {
+  console.log("id:", col.id);
+  console.log("column:", col);
+  
+  return (
+    <ColumnContainer
+      key={col.id}
+      column={col}
+      deleteColumn={deleteColumn}
+      updateColumn={updateColumn}
+      createTask={createTask}
+      deleteTask={deleteTask}
+      updateTask={updateTask}
+      tasks={tasks.filter((task) => task.columnId === col.id)}
+    />
+  );
+})}
             </SortableContext>
           </div>
           <button
