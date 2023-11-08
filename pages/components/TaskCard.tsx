@@ -18,10 +18,7 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
   const [editMode, setEditMode] = useState(true);
   const [completionDate, setCompletionDate] = useState<Date | null>(null);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  // console.log("setCompletionDate", setCompletionDate);
-  if (!task || !task.id) {
-    return null; // or handle the error in an appropriate way
-  }
+  
   const {
     setNodeRef,
     attributes,
@@ -37,6 +34,9 @@ function TaskCard({ task, deleteTask, updateTask }: Props) {
     },
     disabled: editMode,
   });
+  if (!task || !task.id) {
+    return null; 
+  }
 
   const style = {
     transition,
