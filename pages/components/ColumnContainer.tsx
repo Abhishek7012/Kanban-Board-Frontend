@@ -28,10 +28,6 @@ function ColumnContainer({
 }: Props) {
   const [editMode, setEditMode] = useState(false);
 
-  // const tasksIds = useMemo(() => {
-  //   return tasks.map((task) => task.id);
-  // }, [tasks]);
-  // console.log("tasksIds",tasksIds);
   const tasksIds = useMemo(() => {
     if (tasks && tasks.length > 0) {
       return tasks.map((task) => task.id);

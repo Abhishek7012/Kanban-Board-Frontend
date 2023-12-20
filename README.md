@@ -1,40 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## How the Kanban Board Works:
 
-## Getting Started
+1. **Columns and Tasks:**
+   - The board consists of columns representing different stages of a workflow (e.g., "Todo," "Doing," "Done").
+   - Each column contains tasks relevant to that stage.
+   - Users can create, edit, and delete both columns and tasks.
 
-First, run the development server:
+2. **Drag-and-Drop Functionality:**
+   - Tasks can be moved between columns using drag-and-drop functionality.
+   - Columns can also be rearranged to customize the workflow.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. **Task Details:**
+   - Each task displays its content and due date.
+   - Users can edit task content and due dates directly on the board.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Dynamic User Interface:**
+   - The UI is designed to be responsive and interactive.
+   - Users can add new columns and tasks dynamically.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+5. **Persistence:**
+   - The application retains its state, even after a page refresh.
+   - Tasks and columns are stored in the component state and can be saved to a backend server for persistent data storage.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Technologies Used:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. **React:**
+   - The application is built using React, a JavaScript library for building user interfaces.
+   - React's component-based architecture helps in creating modular and reusable UI elements.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. **DND-Kit:**
+   - The drag-and-drop functionality is implemented using the DND-Kit library.
+   - DND-Kit provides a set of utilities for building drag-and-drop interfaces, making it easier to implement the Kanban board's interactive features.
 
-## Learn More
+3. **React-DatePicker:**
+   - The React-DatePicker library is used for handling date selection in tasks.
+   - It provides a user-friendly date picker component to set due dates for tasks.
 
-To learn more about Next.js, take a look at the following resources:
+4. **React-Portal:**
+   - React Portals are utilized to render the drag overlay outside the normal document flow.
+   - This is crucial for providing a seamless drag-and-drop experience across different parts of the page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **TypeScript:**
+   - TypeScript is used to enhance code quality and maintainability by adding static typing to the JavaScript code.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Why This Approach:
 
-## Deploy on Vercel
+1. **React for Component-Based UI:**
+   - React's component-based structure simplifies UI development, making it easier to manage state and update the DOM efficiently.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **DND-Kit for Drag-and-Drop:**
+   - DND-Kit abstracts away the complexities of drag-and-drop implementation, providing a clean API for handling draggable elements.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **React-DatePicker for Date Handling:**
+   - React-DatePicker offers a straightforward solution for handling date input, enhancing the user experience for setting due dates.
+
+4. **React-Portal for Overlay:**
+   - React Portals enable rendering components outside their parent hierarchy, a crucial feature for creating the drag overlay in this Kanban board.
+
+5. **TypeScript for Type Safety:**
+   - TypeScript adds a layer of type safety to the code, reducing potential runtime errors and improving code maintainability.
+
+In summary, the Kanban board is built with a combination of React and specialized libraries to provide a smooth and interactive task management experience. The use of TypeScript enhances code quality, and the chosen technologies contribute to a scalable and maintainable application.
